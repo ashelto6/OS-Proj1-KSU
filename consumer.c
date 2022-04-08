@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 		sem_wait(&mem->mutex);
 		printf("Consumer has began consuming.\n");
 
-		if(mem->table[i]>-1) 
+		if(mem->table[i] > -1) 
         	{
 			printf("ID %d: filled with item: %d. clearing in progress\n", i, mem->table[i]);
 			mem->table[i] = -1;
