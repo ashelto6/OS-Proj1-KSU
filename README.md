@@ -15,5 +15,6 @@ gcc producer.c -pthread -lrt -o producer
 ```
 
 # Example Output of 10 Producers/Consumers
-![Capture](https://user-images.githubusercontent.com/60279886/162361581-3cb98fd7-475f-4ea0-b546-c38cab7c1d0d.PNG)
+![Capture](https://user-images.githubusercontent.com/60279886/162364284-01bee468-6f4d-448b-91b3-ea7d9482d1f2.PNG)
+
 
