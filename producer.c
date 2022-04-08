@@ -21,40 +21,40 @@ void undoSHM(void)
 
 int main() 
 {
-    srand(time(NULL));
+    	srand(time(NULL));
 	int numOfProdCons = 15;
 
 	atexit(undoSHM);
 	int fileDescriptor = shm_open("opersysproj1", O_CREAT | O_RDWR, 0666);
 
 	if(fileDescriptor < 0) 
-    {
-        printf("Initialization of shared memory failed.\n");
-        return 0;
-    }
+    	{
+        	printf("Initialization of shared memory failed.\n");
+        	return 0;
+    	}
 
 	ftruncate(fileDescriptor, 1024);
 
 	struct data *mem = mmap(NULL, 1024, PROT_READ|PROT_WRITE, MAP_SHARED, fileDescriptor, 0);
 
 	if(fileDescriptor < 0) 
-    {
+    	{
 		printf("Initialization of shared memory failed.\n");
 		return 0;
 	}
 
 	mem->table[0] = -1;
-    mem->table[1] = -1;
+    	mem->table[1] = -1;
 
 	sem_init(&mem->mutex, 1, 1);
-    int i = 0;
+    	int i = 0;
 
 	while(numOfProdCons > 0) 
-    {
+    	{
 		sem_wait(&mem->mutex);
 		printf("Producer has began producing.\n");
 		if(mem->table[i] == -1) 
-        {
+        	{
 			int randNum = rand() % 1000 + 1;
 			mem->table[i] = randNum;
 			printf("ID %d: filling with value: %d \n", i, randNum);
