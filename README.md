@@ -5,7 +5,7 @@ This program uses semaphores to solve the producer-consumer problem in the C pro
 * A 2-item buffer exists in shared.h.
 * producer.c & consumer.c share access to this buffer.
 * When the buffer is full, the producer will wait until a consumer consumes an item from the buffer.
-* When the buffer is empty, the consumer will wait under the producer places items in the buffer.
+* When the buffer is empty, the consumer will wait until the producer places items in the buffer.
 
 # Commands for Execution
 ``` 
