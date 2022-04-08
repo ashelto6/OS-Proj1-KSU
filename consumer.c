@@ -25,9 +25,6 @@ int main(int argc, char *argv[])
 	atexit(undoSHM);
 	int fileDescriptor = shm_open("opersysproj1", O_RDWR, 0666);
 
-	while(fileDescriptor < 0) 
-		fileDescriptor = shm_open("opersysproj1", O_RDWR, 0);
-
 	if(fileDescriptor < 0) 
     	{
         	printf("opening of shared memory failed\n");
