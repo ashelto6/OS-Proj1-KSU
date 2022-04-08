@@ -36,12 +36,6 @@ int main(int argc, char *argv[])
 
 	ftruncate(fileDescriptor, 1024);
 
-	if(fileDescriptor < 0) 
-    	{
-		printf("opening of shared memory failed\n");
-		return 0;
-	}
-
 	struct data *mem = mmap(NULL, 1024, PROT_READ|PROT_WRITE, MAP_SHARED, fileDescriptor, 0);
 	int i = 1;
 
