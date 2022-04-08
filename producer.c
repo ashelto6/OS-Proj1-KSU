@@ -41,8 +41,8 @@ int main()
     	mem->table[1] = -1;
 
 	sem_init(&mem->mutex, 1, 1);
-    	int i = 0;
-
+    	
+	int i = 0;
 	while(numOfProdCons > 0) 
     	{
 		sem_wait(&mem->mutex);
