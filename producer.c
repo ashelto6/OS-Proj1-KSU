@@ -57,7 +57,7 @@ int main()
         	{
 			int randNum = rand() % 1000 + 1;
 			mem->table[i] = randNum;
-			printf("ID %d: filling with value: %d \n", i, randNum);
+			printf("ID %d: filling with item: %d \n", i, randNum);
 			i++;
 		}
 		else 
