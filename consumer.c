@@ -20,7 +20,7 @@ void undoSHM(void)
 
 int main(int argc, char *argv[]) 
 {
-    int numOfProdCons = 15;
+    	int numOfProdCons = 15;
 
 	atexit(undoSHM);
 	int fileDescriptor = shm_open("opersysproj1", O_RDWR, 0666);
@@ -29,15 +29,15 @@ int main(int argc, char *argv[])
 		fileDescriptor = shm_open("opersysproj1", O_RDWR, 0);
 
 	if(fileDescriptor < 0) 
-    {
-        printf("opening of shared memory failed\n");
+    	{
+        	printf("opening of shared memory failed\n");
 		return 0;
-    }
+    	}
 
 	ftruncate(fileDescriptor, 1024);
 
 	if(fileDescriptor < 0) 
-    {
+    	{
 		printf("opening of shared memory failed\n");
 		return 0;
 	}
@@ -46,12 +46,12 @@ int main(int argc, char *argv[])
 	int i = 1;
 
 	while(numOfProdCons > 0) 
-    {
+    	{
 		sem_wait(&mem->mutex);
 		printf("Consumer has began consuming.\n");
 
 		if(mem->table[i]>-1) 
-        {
+        	{
 			printf("ID %d: filled with value: %d. clearing in progress\n", i, mem->table[i]);
 			mem->table[i] = -1;
 			i++;
