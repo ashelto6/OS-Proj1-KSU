@@ -7,7 +7,7 @@ This program uses semaphores to solve the producer-consumer problem in the C pro
 * When the buffer is full, the producer will wait until a consumer consumes an item from the buffer.
 * When the buffer is empty, the consumer will wait under the producer places items in the buffer.
 
-# Command for Execution
+# Commands for Execution
 ``` 
 gcc consumer.c -pthread -lrt -o consumer
 gcc producer.c -pthread -lrt -o producer
