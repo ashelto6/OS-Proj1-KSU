@@ -37,12 +37,6 @@ int main()
 
 	struct data *mem = mmap(NULL, 1024, PROT_READ|PROT_WRITE, MAP_SHARED, fileDescriptor, 0);
 
-	if(fileDescriptor < 0) 
-    	{
-		printf("Initialization of shared memory failed.\n");
-		return 0;
-	}
-
 	mem->table[0] = -1;
     	mem->table[1] = -1;
 
