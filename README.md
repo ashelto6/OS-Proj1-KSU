@@ -9,8 +9,8 @@ This program uses semaphores to solve the producer-consumer problem in the C pro
 
 # Commands for Execution
 ``` 
-gcc consumer.c -pthread -lrt -o consumer
 gcc producer.c -pthread -lrt -o producer
+gcc consumer.c -pthread -lrt -o consumer
 ./producer & ./consumer
 ```
 
