@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
 		if(mem->table[i]>-1) 
         {
-			printf("Cell %d: filled with value: %d. clearing in progress\n", i, mem->table[i]);
+			printf("ID %d: filled with value: %d. clearing in progress\n", i, mem->table[i]);
 			mem->table[i] = -1;
 			i++;
 		}
