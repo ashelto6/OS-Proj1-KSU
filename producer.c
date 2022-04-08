@@ -57,11 +57,11 @@ int main()
         {
 			int randNum = rand() % 1000 + 1;
 			mem->table[i] = randNum;
-			printf("Cell %d: filling with value: %d \n", i, randNum);
+			printf("ID %d: filling with value: %d \n", i, randNum);
 			i++;
 		}
 		else 
-			printf("Cell %d: filled, recheck occurs in next critical section\n", i);
+			printf("ID %d: filled, recheck occurs in next critical section\n", i);
 		
 		if(i > 1) 
 			i = 0;
