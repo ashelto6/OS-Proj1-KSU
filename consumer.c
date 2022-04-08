@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 			i++;
 		}
 		else
-			printf("Table %d: is empty, next attempt occurs in next critical section\n", i);
+			printf("Table is empty, next attempt occurs in next critical section\n");
 		
 		if(i > 1)
 			i = 0;
